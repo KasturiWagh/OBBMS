@@ -1,0 +1,59 @@
+{% extends 'common.html' %}
+{% block body %}
+
+    <style>
+      body{
+        height: 100%;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+        background-image: url("{{ url_for('static', filename = 'Bluee.jpg') }}" );
+        backdrop-filter: blur(4px); 
+      }
+      img{
+        position: relative;
+        top:-60px;
+      }
+
+    </style>
+
+
+    <h3  style="text-align:center" >This page is for patients</h3>
+    <div style="text-align:center; font-size:17px;" >Fill your information.</div>
+
+    <form action = "/patient " method = "post" class="form1">
+
+      <p style=" font-size:17px;">Enter Name:</p>
+      <p><input type = "text" name = "nm" required/></p>
+
+      <p style="font-size:17px;" >Enter Contact Information:</p> 
+      <p><input type = "text" name = "contact" required/></p>
+
+      <p style="font-size:17px;" >Blood Type in need : </p> 
+      <p><input type = "text" name = "contact" required/></p>
+
+      <div class="form-group col-md-6">
+        <label for="inputCity">City</label>
+        <input type="text" class="form-control" id="inputCity">
+      </div>
+
+      <div class="form-group col-md-6">
+        <label for="inputState">State</label>
+        <select style="border: 1px solid rgb(0, 0, 0);" id="inputState" class="form-control">
+          <option selected>Choose...</option>
+          <option>...</option>
+          <option value="1">Maharashtra</option>
+          <option value="2">Karnataka</option>
+          <option value="3">Gujarat</option>
+          <option value="4">Uttar Pradesh</option>
+        </select>
+      </div>
+
+      <p><input type = "submit" value = "submit" /><img src="{{ url_for('static', filename = 'submit.png') }}" alt="User Image" ></p>
+      <h3 style="text-align:center; " >Blood manegment system</h3>
+
+    </form>  
+
+</body>
+</html>
+{% endblock body %}

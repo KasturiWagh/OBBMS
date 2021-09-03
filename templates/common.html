@@ -1,0 +1,39 @@
+<!DOCTYPE html>   <!--Common html file-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">   
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBBMS</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/common.css') }}">
+ 
+</head>
+          <nav class="navbar navbar-default" >
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="/">BLOOD MANAGEMENT</a>
+              </div>
+              <ul class="nav navbar-nav">
+        
+                <li><a href="/information">About us</a></li>
+                <li><a href="/bloodBank">Blood bank contact information</a></li>
+                <li><a href="/donerINFO">doner info</a></li>
+                <li><a href="/list3">LIST</a></li>
+                <li><a href="/login">Admin</a></li>
+              </ul>
+            </div>
+          </nav>
+
+          <style>
+               body{
+                    width:100%;
+                    height: 100vh;
+                    }
+          </style>
+
+          {% block body %}
+            
+          {% endblock body %}
+      

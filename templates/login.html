@@ -1,0 +1,25 @@
+{% extends 'common.html' %}
+{% block body %}
+  
+  </head>
+    <body class="text-center">
+    
+        <main class="form-signin">
+            <form action="/admin" method="POST" style="margin : 10px">
+
+                <h1 class="h3 mb-3 fw-normal">Sign in</h1>
+
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="uname"  name = "uname" placeholder="Admin Name">
+                    <label for="uname">Admin Name</label>
+                </div>
+                <div class="form-floating">
+                    <input type="password" class="form-control" id="pass" name="pass" placeholder="Password">
+                    <label for="pass">Password</label>
+                </div>
+                <button class="w-100 btn btn-lg btn-danger" type="submit">Sign in</button>
+            </form>
+        </main> 
+    </body>
+  </html>
+{% endblock body %}

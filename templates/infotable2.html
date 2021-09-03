@@ -1,0 +1,45 @@
+{% extends 'common.html' %}
+{% block body %}
+<!-- Patient -->
+  {% if allinfo|length == 0 %}
+      <div class="alert alert-danger" role="alert">
+        No Doners avialable <a href="/" class="alert-link">Go to Home page</a>.This will Take you to home page.
+      </div>
+  {% else %}
+    <input id="searchbar"   onkeyup="search_Btype()" type="text"
+        name="search" placeholder="Search Blood Type">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">sno0</th>
+          <th scope="col">Name And location</th>
+          <th scope="col">Blood Type</th>
+          <th scope="col">contact</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        {% for info in allinfo %} 
+        <tr id='list' class="a">
+          <th scope="Sno">{{loop.index}}</th>
+          <td>{{info.Donername}}</td>
+          <td class="Btype">{{info.bloodT}}</td>
+          <td>{{info.contactME}}</td>
+          <td>
+            <a style="margin-right:5px;" onclick="window.location.href='/sendRequest/{{info.sno}}/{{NAME}}/{{CONTACT}}';MYFunction() " type="button" class="btn btn-danger   ">Request</button>
+              <script>
+                function MYFunction() {
+                  confirm("Go to send request form");
+                }
+              </script>
+            <a  onclick="window.location.href='/information'"type="button" class="btn btn-danger  ">information</button>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody> 
+    </table>
+  {% endif %}
+      <script src="{{url_for('static', filename='js/search.js')}}"></script>
+</html>
+{% endblock body %}
