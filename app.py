@@ -83,8 +83,6 @@ def show(NAME,CONTACT):
    allinfo = Info.query.all()
    return render_template('infotable2.html', allinfo = allinfo , NAME = NAME , CONTACT = CONTACT)
 
-
-
 #Contact us form
 @app.route('/information')
 def information():
